@@ -2,7 +2,7 @@
 
 ### How To Run This Software
 
-Running This is bit complicket so I make a youtube video so you can start from scrach. 
+Running This is bit complicate so I make a youtube video so you can start from scratch. 
 
 ### Youtube instruction
 
