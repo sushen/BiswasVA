@@ -6,4 +6,5 @@ Running This is bit complicket so I make a youtube video so you can start from s
 
 ### Youtube instruction
 
-[![Virtual Assistant](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.elegantthemes.com%2Fblog%2Fbusiness%2Fhow-to-become-a-virtual-assistant&psig=AOvVaw3qRvZ9EszTMrz_ZuyViz4-&ust=1611720021552000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKjLiZLbuO4CFQAAAAAdAAAAABAK)](https://www.youtube.com/playlist?list=PLaUHdizmYMp33A_VtsQjPVlGWP78_t3_A)
+[![Virtual Assistant](https://user-images.githubusercontent.com/4492335/105800527-1a546f00-5fc1-11eb-9755-dba279cf5cb8.jpg)].(https://youtu.be/ATil5tklYu0)
+
