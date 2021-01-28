@@ -4,16 +4,13 @@ import pywhatkit
 import datetime
 import random
 import wikipedia
-import pyjokes
 
 listener = sr.Recognizer()
 engine = pyttsx3.init()
 
-
 def talk(text):
     engine.say(text)
     engine.runAndWait()
-
 
 name = 'alexa'
 
@@ -23,7 +20,6 @@ alexa_voice = [
     "Are you talking to me?, Please start With my mame."
 ]
 
-
 def take_commend():
     try:
         with sr.Microphone() as source:
@@ -32,20 +28,24 @@ def take_commend():
             command = listener.recognize_google(voice)
             command = command.lower()
             if name in command:
-                command = command.replace('alexa', '')
+                command = command.replace('alexa','')
                 print(command)
+            else:
+                alexa_request = random.choice(alexa_voice)
+                engine.say(alexa_request)
+                print(alexa_request)
+
 
     except:
         pass
 
     return command
 
-
 def run_alaxa():
     command = take_commend()
     # print(command)
     if 'play' in command:
-        song = command.replace('play', '')
+        song = command.replace('play','')
         talk('playing' + song)
         pywhatkit.playonyt('playing' + song)
 
@@ -54,20 +54,13 @@ def run_alaxa():
         talk('time is ' + time)
 
     elif 'wikipedia' in command:
-        persion = command.replace('wki', '')
-        info = wikipedia.summary(persion, 5)
+        persion = command.replace('wki','')
+        info = wikipedia.summary(persion,5)
         print(info)
         talk(info)
-        
-    elif 'joke' in command:
-        talk(pyjokes.get_joke())
-
-    else:
-        alexa_request = random.choice(alexa_voice)
-        engine.say(alexa_request)
-        print(alexa_request)
 
 
-while True:
-    run_alaxa()
+
+
+run_alaxa()
 
