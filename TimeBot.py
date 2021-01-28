@@ -1,6 +1,8 @@
 import speech_recognition as sr
 import pyttsx3
 import pywhatkit
+import datetime
+import random
 
 listener = sr.Recognizer()
 engine = pyttsx3.init()
@@ -10,6 +12,12 @@ def talk(text):
     engine.runAndWait()
 
 name = 'alexa'
+
+alexa_voice = [
+    "You need to tell my name , Then I understand you are talking to me.",
+    "Can you tell my name?, Then I understand you are talking to me. ",
+    "Are you talking to me?, Please start With my mame."
+]
 
 def take_commend():
     try:
@@ -22,7 +30,9 @@ def take_commend():
                 command = command.replace('alexa','')
                 print(command)
             else:
-                engine.say("I am alexa. You need to tell my name, Then I understand you are talking to me.")
+                alexa_request = random.choice(alexa_voice)
+                engine.say(alexa_request)
+                print(alexa_request)
                 engine.runAndWait()
 
     except:
@@ -37,6 +47,14 @@ def run_alaxa():
         song = command.replace('play','')
         talk('playing' + song)
         pywhatkit.playonyt('playing' + song)
+
+    elif 'time' in command:
+        time = datetime.datetime.now().strftime('%I:%M %p')
+        talk('time is ' + time)
+
+    else:
+        engine.runAndWait()
+
 
 
 run_alaxa()
