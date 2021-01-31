@@ -5,9 +5,12 @@ import datetime
 import random
 import wikipedia
 import pyjokes
+import sys
 
 listener = sr.Recognizer()
 engine = pyttsx3.init()
+voices = engine.getProperty('voices')
+engine.setProperty('voice', voices[0].id)
 
 
 def talk(text):
@@ -43,7 +46,7 @@ def take_commend():
 
 def run_alaxa():
     command = take_commend()
-    # print(command)
+    print(command)
     if 'play' in command:
         song = command.replace('play', '')
         talk('playing' + song)
@@ -58,9 +61,17 @@ def run_alaxa():
         info = wikipedia.summary(persion, 2)
         print(info)
         talk(info)
-        
+    elif 'search' in command:
+        searchelement = command.replace('search', '')
+        googleSearch = pywhatkit.search(searchelement)
+        print(googleSearch)
+        talk('searching' + searchelement)
+
     elif 'joke' in command:
         talk(pyjokes.get_joke())
+
+    elif 'stop' in command:
+        sys.exit()
 
     else:
         alexa_request = random.choice(alexa_voice)
